@@ -47,9 +47,9 @@ public class DemoDataProvider {
     };
 
     public static String[] urls = new String[]{//640*360 360/640=0.5625
-            "http://photocdn.sohu.com/tvmobilemvms/20150907/144160323071011277.jpg",//伪装者:胡歌演绎"痞子特工"
-            "http://photocdn.sohu.com/tvmobilemvms/20150907/144158380433341332.jpg",//无心法师:生死离别!月牙遭虐杀
-            "http://photocdn.sohu.com/tvmobilemvms/20150907/144160286644953923.jpg",//花千骨:尊上沦为花千骨
+            "http://photocdn.sohu.com/tvmobilemvms/20150902/144115156939164801.jpg",//伪装者:胡歌演绎"痞子特工"
+            "http://cdn.imengyu.top/images/2.jpg",//无心法师:生死离别!月牙遭虐杀
+            "http://cdn.imengyu.top/images/3.jpg",//花千骨:尊上沦为花千骨
             "http://photocdn.sohu.com/tvmobilemvms/20150902/144115156939164801.jpg",//综艺饭:胖轩偷看夏天洗澡掀波澜
             "http://photocdn.sohu.com/tvmobilemvms/20150907/144159406950245847.jpg",//碟中谍4:阿汤哥高塔命悬一线,超越不可能
     };
@@ -75,11 +75,10 @@ public class DemoDataProvider {
     @MemoryCache
     public static List<NewInfo> getDemoNewInfos() {
         List<NewInfo> list = new ArrayList<>();
-        list.add(new NewInfo("源码", "Android源码分析--Android系统启动")
-                .setSummary("其实Android系统的启动最主要的内容无非是init、Zygote、SystemServer这三个进程的启动，他们一起构成的铁三角是Android系统的基础。")
-                .setDetailUrl("https://juejin.im/post/5c6fc0cdf265da2dda694f05")
-                .setImageUrl("https://user-gold-cdn.xitu.io/2019/2/22/16914891cd8a950a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"));
-
+        list.add(new NewInfo("源码", "良渚凭什么申遗成功？一眼5000年的古城，是一生必去的打卡地！")
+                .setSummary("良渚凭什么申遗成功？一眼5000年的古城，是一生必去的打卡地！")
+                .setDetailUrl("http://www.tourzj.gov.cn/play/ddetails_zixun.aspx?id=1864")
+                .setImageUrl("http://img.tourzj.com/admin/media/eecfd82f-74b4-4311-a023-e805d63f4172.jpg"));
         list.add(new NewInfo("Android UI", "XUI 一个简洁而优雅的Android原生UI框架，解放你的双手")
                 .setSummary("涵盖绝大部分的UI组件：TextView、Button、EditText、ImageView、Spinner、Picker、Dialog、PopupWindow、ProgressBar、LoadingView、StateLayout、FlowLayout、Switch、Actionbar、TabBar、Banner、GuideView、BadgeView、MarqueeView、WebView、SearchView等一系列的组件和丰富多彩的样式主题。\n")
                 .setDetailUrl("https://juejin.im/post/5c3ed1dae51d4543805ea48d")
