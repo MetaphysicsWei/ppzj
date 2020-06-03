@@ -19,6 +19,7 @@ package com.xuexiang.ppzj.utils;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 
 import com.xuexiang.ppzj.R;
 import com.xuexiang.ppzj.adapter.entity.NewInfo;
@@ -131,9 +132,8 @@ public class DemoDataProvider {
         String[] titles = ResUtils.getStringArray(titleArrayId);
         Drawable[] icons = ResUtils.getDrawableArray(context, iconArrayId);
         for (int i = 0; i < titles.length; i++) {
-            list.add(new AdapterItem(titles[0], icons[i]));
+            list.add(new AdapterItem(titles[i], icons[i]));
         }
         return list;
     }
-
 }

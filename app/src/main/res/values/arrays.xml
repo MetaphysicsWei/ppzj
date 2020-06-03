@@ -58,7 +58,7 @@
     </string-array>
 
     <string-array name="grid_titles_entry">
-        <item>" "</item>
+        <item>温州</item>
         <item>杭州</item>
         <item>宁波</item>
         <item>绍兴</item>

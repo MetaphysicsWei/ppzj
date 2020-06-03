@@ -111,7 +111,7 @@ public class NewsFragment extends BaseFragment {
                     RadiusImageView imageView = holder.findViewById(R.id.riv_item);
                     imageView.setCircle(true);
                     ImageLoader.get().loadImage(imageView, item.getIcon());
-                    holder.text(R.id.tv_title, item.getTitle().toString().substring(0, 1));
+                    // holder.text(R.id.tv_title, item.getTitle().toString().substring(0, 1));  取消显示标题第一个字的功能
                     holder.text(R.id.tv_sub_title, item.getTitle());
 
                     holder.click(R.id.ll_container, v -> XToastUtils.toast("点击了：" + item.getTitle()));
