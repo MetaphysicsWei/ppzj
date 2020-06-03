@@ -131,7 +131,7 @@ public class DemoDataProvider {
         String[] titles = ResUtils.getStringArray(titleArrayId);
         Drawable[] icons = ResUtils.getDrawableArray(context, iconArrayId);
         for (int i = 0; i < titles.length; i++) {
-            list.add(new AdapterItem(titles[i], icons[i]));
+            list.add(new AdapterItem(titles[0], icons[i]));
         }
         return list;
     }
