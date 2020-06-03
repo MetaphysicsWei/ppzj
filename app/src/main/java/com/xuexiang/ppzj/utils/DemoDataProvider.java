@@ -39,19 +39,22 @@ import java.util.List;
 public class DemoDataProvider {
 
     public static String[] titles = new String[]{
-            "伪装者:胡歌演绎'痞子特工'",
-            "无心法师:生死离别!月牙遭虐杀",
-            "花千骨:尊上沦为花千骨",
-            "综艺饭:胖轩偷看夏天洗澡掀波澜",
-            "碟中谍4:阿汤哥高塔命悬一线,超越不可能",
+            "诗画浙江",
+            "诗画浙江",
+            "玩转浙江田园图",
+            "浙江武学",
+            "浙江龙舟图",
     };
+//    轮播图图片
 
     public static String[] urls = new String[]{//640*360 360/640=0.5625
-            "http://photocdn.sohu.com/tvmobilemvms/20150902/144115156939164801.jpg",//伪装者:胡歌演绎"痞子特工"
-            "http://cdn.imengyu.top/images/2.jpg",//无心法师:生死离别!月牙遭虐杀
-            "http://cdn.imengyu.top/images/3.jpg",//花千骨:尊上沦为花千骨
-            "http://photocdn.sohu.com/tvmobilemvms/20150902/144115156939164801.jpg",//综艺饭:胖轩偷看夏天洗澡掀波澜
-            "http://photocdn.sohu.com/tvmobilemvms/20150907/144159406950245847.jpg",//碟中谍4:阿汤哥高塔命悬一线,超越不可能
+            "http://img.tourzj.com/img/topb4.jpg",//诗画浙江
+            "http://img.tourzj.com/img/banner-hangzhou.jpg",//诗画浙江
+            "http://img.tourzj.com/img/banner-lygl-list-li.png",//玩转浙江田园图"
+            "http://cdn.imengyu.top/images/2.jpg",//浙江武学
+            "http://cdn.imengyu.top/images/3.jpg",//浙江龙舟图
+
+
     };
 
     @MemoryCache

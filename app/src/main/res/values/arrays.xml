@@ -70,8 +70,8 @@
 
     <!--  修改这里的图标  -->
     <array name="grid_icons_entry">
-        <item>@color/app_color_theme_1</item>
-        <item>@color/app_color_theme_2</item>
+        <item>@drawable/wenzhou_active</item>
+        <item>@drawable/hang_active</item>
         <item>@color/app_color_theme_3</item>
         <item>@color/app_color_theme_4</item>
         <item>@color/app_color_theme_5</item>
