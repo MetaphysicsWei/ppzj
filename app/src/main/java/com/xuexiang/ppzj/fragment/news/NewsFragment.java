@@ -39,6 +39,7 @@ import com.xuexiang.xui.adapter.recyclerview.RecyclerViewHolder;
 import com.xuexiang.xui.adapter.simple.AdapterItem;
 import com.xuexiang.xui.widget.actionbar.TitleBar;
 import com.xuexiang.xui.widget.banner.widget.banner.SimpleImageBanner;
+import com.xuexiang.xui.widget.dialog.materialdialog.MaterialDialog;
 import com.xuexiang.xui.widget.imageview.ImageLoader;
 import com.xuexiang.xui.widget.imageview.RadiusImageView;
 
@@ -114,7 +115,16 @@ public class NewsFragment extends BaseFragment {
                     // holder.text(R.id.tv_title, item.getTitle().toString().substring(0, 1));  取消显示标题第一个字的功能
                     holder.text(R.id.tv_sub_title, item.getTitle());
 
-                    holder.click(R.id.ll_container, v -> XToastUtils.toast("点击了：" + item.getTitle()));
+                    holder.click(R.id.ll_container, v ->
+                            new MaterialDialog.Builder(getContext())
+                                    //标题
+                                    .title("网上好")
+                                    //文本内容
+                                    .content("再见再见再见再见再见再见再见再见再见再见再见再见")
+                                    //确认按键
+                                    .positiveText("你好")
+                                    .show());
+
                 }
             }
         };
