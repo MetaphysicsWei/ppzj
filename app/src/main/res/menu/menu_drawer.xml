@@ -28,9 +28,10 @@
             android:title="@string/menu_news" />
 
         <item
-            android:id="@+id/nav_trending"
-            android:icon="@drawable/ic_menu_trending"
-            android:title="@string/menu_trending" />
+
+            android:id="@+id/nav_search"
+            android:icon="@drawable/ic_menu_search"
+            android:title="@string/menu_search"/>
 
         <item
             android:id="@+id/nav_profile"
@@ -45,10 +46,10 @@
         android:checkableBehavior="single">
 
         <item
-            android:id="@+id/nav_search"
+            android:id="@+id/nav_trending"
             android:checkable="false"
-            android:icon="@drawable/ic_menu_search"
-            android:title="@string/menu_search" />
+            android:icon="@drawable/ic_menu_trending"
+            android:title="@string/menu_trending" />
 
         <item
             android:id="@+id/nav_notifications"
