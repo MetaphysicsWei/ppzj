@@ -32,8 +32,6 @@ import com.xuexiang.xui.adapter.recyclerview.RecyclerViewHolder;
 /**
  * 单独布局的DelegateAdapter
  *
- * @author xuexiang
- * @since 2020/3/20 1:04 AM
  */
 public abstract class SingleDelegateAdapter extends DelegateAdapter.Adapter<RecyclerViewHolder> {
 

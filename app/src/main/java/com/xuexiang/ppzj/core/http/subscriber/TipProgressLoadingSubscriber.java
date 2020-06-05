@@ -31,8 +31,6 @@ import com.xuexiang.xutil.common.logger.Logger;
 /**
  * 带错误toast提示和加载进度条的网络请求订阅
  *
- * @author xuexiang
- * @since 2019-11-18 23:11
  */
 public abstract class TipProgressLoadingSubscriber<T> extends ProgressLoadingSubscriber<T> {
 

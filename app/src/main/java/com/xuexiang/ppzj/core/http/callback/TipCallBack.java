@@ -27,8 +27,6 @@ import com.xuexiang.xutil.common.logger.Logger;
 /**
  * 带错误toast提示的网络请求回调
  *
- * @author xuexiang
- * @since 2019-11-18 23:02
  */
 public abstract class TipCallBack<T> extends SimpleCallBack<T> {
 

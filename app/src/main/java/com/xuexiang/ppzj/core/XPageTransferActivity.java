@@ -29,8 +29,6 @@ import com.xuexiang.xutil.common.StringUtils;
  * https://xuexiangjys.club/xpage/transfer?pageName=xxxxx&....
  * applink的中转
  *
- * @author xuexiang
- * @since 2019-07-06 9:37
  */
 @Router(path = "/xpage/transfer")
 public class XPageTransferActivity extends BaseActivity {

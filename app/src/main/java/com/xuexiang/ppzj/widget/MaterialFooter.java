@@ -35,8 +35,6 @@ import com.scwang.smartrefresh.layout.util.DensityUtil;
 /**
  * Material风格的上拉加载
  *
- * @author xuexiang
- * @since 2019-08-03 11:14
  */
 public class MaterialFooter extends ProgressBar implements RefreshFooter {
 

@@ -38,10 +38,6 @@ import com.xuexiang.xui.widget.actionbar.TitleUtils;
 
 import java.io.Serializable;
 
-/**
- * @author xuexiang
- * @since 2018/12/29 下午12:41
- */
 public abstract class BaseSimpleListFragment extends XPageSimpleListFragment {
 
     @Override

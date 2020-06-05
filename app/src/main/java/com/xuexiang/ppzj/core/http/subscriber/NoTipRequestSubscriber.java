@@ -26,8 +26,6 @@ import com.xuexiang.xutil.common.logger.Logger;
 /**
  * 不带错误toast提示的网络请求订阅，只存储错误的日志
  *
- * @author xuexiang
- * @since 2019-11-18 23:11
  */
 public abstract class NoTipRequestSubscriber<T> extends BaseSubscriber<T> {
 

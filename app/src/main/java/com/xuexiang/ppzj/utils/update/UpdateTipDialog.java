@@ -31,8 +31,6 @@ import com.xuexiang.xupdate.XUpdate;
 /**
  * 版本更新提示弹窗
  *
- * @author xuexiang
- * @since 2019-06-15 00:06
  */
 public class UpdateTipDialog extends AppCompatActivity implements DialogInterface.OnDismissListener {
 

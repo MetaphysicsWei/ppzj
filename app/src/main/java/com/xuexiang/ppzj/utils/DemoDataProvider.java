@@ -34,8 +34,6 @@ import java.util.List;
 /**
  * 演示数据
  *
- * @author xuexiang
- * @since 2018/11/23 下午5:52
  */
 public class DemoDataProvider {
 

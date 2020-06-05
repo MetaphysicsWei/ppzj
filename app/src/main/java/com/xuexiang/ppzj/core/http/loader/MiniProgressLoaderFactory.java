@@ -23,9 +23,6 @@ import com.xuexiang.xhttp2.subsciber.impl.IProgressLoader;
 
 /**
  * 迷你加载框创建工厂
- *
- * @author xuexiang
- * @since 2019-11-18 23:23
  */
 public class MiniProgressLoaderFactory implements IProgressLoaderFactory {
 

@@ -48,8 +48,6 @@ import butterknife.BindView;
 /**
  * 首页动态
  *
- * @author xuexiang
- * @since 2019-10-30 00:15
  */
 @Page(anim = CoreAnim.none)
 public class NewsFragment extends BaseFragment {
@@ -118,7 +116,7 @@ public class NewsFragment extends BaseFragment {
                     holder.click(R.id.ll_container, v ->
                             new MaterialDialog.Builder(getContext())
                                     //标题
-                                    .title("网上好")
+                                    .title(item.getTitle())
                                     //文本内容
                                     .content("再见再见再见再见再见再见再见再见再见再见再见再见")
                                     //确认按键

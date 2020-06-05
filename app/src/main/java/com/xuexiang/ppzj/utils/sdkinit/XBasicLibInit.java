@@ -35,8 +35,6 @@ import com.xuexiang.xutil.common.StringUtils;
 /**
  * X系列基础库初始化
  *
- * @author xuexiang
- * @since 2019-06-30 23:54
  */
 public final class XBasicLibInit {
 

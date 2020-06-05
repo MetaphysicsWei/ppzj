@@ -23,8 +23,6 @@ import com.xuexiang.xupdate.proxy.impl.AbstractUpdateParser;
 /**
  * 版本更新信息自定义json解析器
  *
- * @author xuexiang
- * @since 2020-02-18 13:01
  */
 public class CustomUpdateParser extends AbstractUpdateParser {
 

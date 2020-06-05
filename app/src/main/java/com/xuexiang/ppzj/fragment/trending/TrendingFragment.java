@@ -73,10 +73,7 @@ import java.nio.ByteBuffer;
 import java.util.Timer;
 import java.util.TimerTask;
 
-/**
- * @author xuexiang
- * @since 2019-10-30 00:19
- */
+
 @Page(anim = CoreAnim.none)
 public class TrendingFragment extends BaseFragment {
     private static final String TAG = "TrendingFragment";

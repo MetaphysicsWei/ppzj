@@ -34,8 +34,6 @@ import java.util.Map;
 /**
  * XHttp2实现的请求更新
  *
- * @author xuexiang
- * @since 2018/8/12 上午11:46
  */
 public class XHttpUpdateHttpServiceImpl implements IUpdateHttpService {
 

@@ -25,10 +25,6 @@ import com.xuexiang.xutil.net.JsonUtil;
 
 import java.lang.reflect.Type;
 
-/**
- * @author XUE
- * @since 2019/3/27 16:39
- */
 @Router(path = "/service/json")
 public class JsonSerializationService implements SerializationService {
     /**

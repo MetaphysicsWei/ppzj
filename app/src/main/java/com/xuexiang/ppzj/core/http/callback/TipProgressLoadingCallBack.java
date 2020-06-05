@@ -31,8 +31,6 @@ import com.xuexiang.xutil.common.logger.Logger;
 /**
  * 带错误toast提示和加载进度条的网络请求回调
  *
- * @author xuexiang
- * @since 2019-11-18 23:16
  */
 public abstract class TipProgressLoadingCallBack<T> extends ProgressLoadingCallBack<T> {
     /**

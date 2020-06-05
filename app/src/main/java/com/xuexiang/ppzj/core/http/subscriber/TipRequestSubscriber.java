@@ -30,8 +30,6 @@ import com.xuexiang.xutil.common.logger.Logger;
 /**
  * 带错误toast提示的网络请求订阅
  *
- * @author xuexiang
- * @since 2019-11-18 23:10
  */
 public abstract class TipRequestSubscriber<T> extends BaseSubscriber<T> {
     /**

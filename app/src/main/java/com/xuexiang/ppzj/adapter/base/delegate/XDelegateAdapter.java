@@ -35,8 +35,6 @@ import java.util.List;
 /**
  * 基础DelegateAdapter
  *
- * @author xuexiang
- * @since 2020/3/20 12:17 AM
  */
 public abstract class XDelegateAdapter<T, V extends RecyclerView.ViewHolder> extends DelegateAdapter.Adapter<V> {
     /**

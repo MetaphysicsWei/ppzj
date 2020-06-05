@@ -89,21 +89,20 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
     testImplementation deps.junit
     androidTestImplementation deps.runner
     androidTestImplementation deps.espresso.core
-
     //分包
     implementation deps.androidx.multidex
-
     implementation 'com.alibaba.android:vlayout:1.2.36'
     //下拉刷新
     implementation 'com.github.xuexiangjys.SmartRefreshLayout:refresh-header:1.1.5'
     implementation 'com.github.xuexiangjys.SmartRefreshLayout:refresh-layout:1.1.5'
     //WebView
     implementation 'com.github.xuexiangjys.AgentWeb:agentweb-core:1.0.0'
-    implementation 'com.github.xuexiangjys.AgentWeb:agentweb-download:1.0.0'//选填
+    implementation 'com.github.xuexiangjys.AgentWeb:agentweb-download:1.0.0'
+    //选填
     implementation 'com.alibaba:fastjson:1.1.70.android'
     //腾讯的键值对存储mmkv
     implementation 'com.tencent:mmkv:1.0.22'
@@ -112,13 +111,11 @@ dependencies {
     //umeng统计
     implementation 'com.umeng.umsdk:analytics:8.0.2'
     implementation 'com.umeng.umsdk:common:2.0.2'
-
     //ANR异常捕获
     implementation 'com.github.anrwatchdog:anrwatchdog:1.4.0'
-
-
     //美团多渠道打包
     implementation 'com.meituan.android.walle:library:1.1.6'
+    implementation files('libs/jedis-3.3.0.jar')
 }
 //自动添加X-Library依赖
 apply from: 'x-library.gradle'

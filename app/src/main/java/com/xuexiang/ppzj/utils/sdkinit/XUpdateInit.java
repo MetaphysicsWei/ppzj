@@ -30,8 +30,6 @@ import com.xuexiang.xupdate.utils.UpdateUtils;
 /**
  * XUpdate 版本更新 SDK 初始化
  *
- * @author xuexiang
- * @since 2019-06-18 15:51
  */
 public final class XUpdateInit {
 

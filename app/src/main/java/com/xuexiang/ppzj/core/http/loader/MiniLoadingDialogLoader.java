@@ -27,8 +27,6 @@ import com.xuexiang.xui.widget.dialog.MiniLoadingDialog;
 /**
  * 默认进度加载
  *
- * @author xuexiang
- * @since 2019-11-18 23:07
  */
 public class MiniLoadingDialogLoader implements IProgressLoader {
     /**

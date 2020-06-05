@@ -45,8 +45,6 @@ import static com.xuexiang.ppzj.core.webview.AgentWebFragment.KEY_URL;
 /**
  * 工具类
  *
- * @author xuexiang
- * @since 2020-02-23 15:12
  */
 public final class Utils {
 

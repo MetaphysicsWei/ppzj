@@ -29,8 +29,6 @@ import com.xuexiang.ppzj.MyApp;
 /**
  * UMeng 统计 SDK初始化
  *
- * @author xuexiang
- * @since 2019-06-18 15:49
  */
 public final class UMengInit {
 
