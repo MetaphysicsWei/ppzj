@@ -12,7 +12,8 @@
     <string name="menu_notifications">通知</string>
     <string name="menu_issues">问题</string>
     <string name="menu_starred">收藏</string>
-    <string name="menu_trending">趋势</string>
+    <string name="menu_traffic">客流</string>
+    <string name="menu_trending">搜索</string>
     <string name="menu_settings">设置</string>
     <string name="menu_about">关于</string>
 

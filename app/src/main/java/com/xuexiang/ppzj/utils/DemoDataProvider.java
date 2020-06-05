@@ -71,14 +71,18 @@ public class DemoDataProvider {
         return list;
     }
 
+    public static List<NewInfo> getDemoNewInfos() {
+        return getDemoNewInfos(null);
+    }
     /**
      * 用于占位的空信息
      *
      * @return
      */
     @MemoryCache
-    public static List<NewInfo> getDemoNewInfos() {
+    public static List<NewInfo> getDemoNewInfos(String key) {
         List<NewInfo> list = new ArrayList<>();
+        List<NewInfo> searchResult = new ArrayList<>();
         list.add(new NewInfo("资讯", "良渚凭什么申遗成功？一眼5000年的古城，是一生必去的打卡地！")
                 .setSummary("浙江杭州良渚古城遗址，被正式列入《世界遗产名录》，中国以55处世界遗产的数量，位列世界遗产总数第一！")
                 .setDetailUrl("http://www.tourzj.gov.cn/play/ddetails_zixun.aspx?id=1864")
@@ -117,9 +121,16 @@ public class DemoDataProvider {
                 .setSummary("一年中最清新的夏季时节又将到来 挑个日子，拣个山头，树下闲坐，看风吹起")
                 .setDetailUrl("http://www.tourzj.gov.cn/play/ddetails_zixun.aspx?id=1883")
                 .setImageUrl("http://img.tourzj.com/admin/media/2c8ea702-d55b-4c46-8182-0493e63f77f5.jpg"));
-        return list;
 
+        if(key == null || key.equals("")) return list;
 
+        for (NewInfo i : list) {
+            if(i.getTitle().contains(key)
+                || i.getSummary().contains(key))
+                searchResult.add(i);
+        }
+
+        return searchResult;
     }
 
     public static List<AdapterItem> getGridItems(Context context) {

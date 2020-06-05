@@ -16,14 +16,73 @@
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_basic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="搜索"
+            android:imeOptions="actionSearch"
+            android:maxLines="1" />
+
+        <ImageButton
+            android:id="@+id/btn_mic"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_weight="0"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/ic_mic" />
+    </LinearLayout>
 
     <TextView
-        style="@style/TextStyle.Title"
+        android:id="@+id/text_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="点击录音"
+        android:textAlignment="textEnd" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:text="@string/menu_trending" />
+        app:srlEnableAutoLoadMore="true"
+        app:srlEnableLoadMore="true">
+
+        <com.scwang.smartrefresh.header.MaterialHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+        </com.scwang.smartrefresh.header.MaterialHeader>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            tools:listitem="@layout/adapter_news_card_view_list_item" />
+
+        <!--    注意修改包名时，这里也需要修改    -->
+        <com.xuexiang.ppzj.widget.MaterialFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 </LinearLayout>

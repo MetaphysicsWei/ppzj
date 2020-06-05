@@ -9,6 +9,8 @@ android {
     compileSdkVersion build_versions.target_sdk
     buildToolsVersion build_versions.build_tools
 
+    //compileOptions.encoding="GBK"
+
     defaultConfig {
         applicationId "com.xuexiang.ppzj"
         minSdkVersion 17
@@ -87,7 +89,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])
     testImplementation deps.junit
     androidTestImplementation deps.runner
     androidTestImplementation deps.espresso.core
@@ -102,6 +104,7 @@ dependencies {
     //WebView
     implementation 'com.github.xuexiangjys.AgentWeb:agentweb-core:1.0.0'
     implementation 'com.github.xuexiangjys.AgentWeb:agentweb-download:1.0.0'//选填
+    implementation 'com.alibaba:fastjson:1.1.70.android'
     //腾讯的键值对存储mmkv
     implementation 'com.tencent:mmkv:1.0.22'
     //屏幕适配AutoSize

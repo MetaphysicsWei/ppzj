@@ -53,8 +53,7 @@
                     style="@style/TextStyle.Explain"
                     android:layout_gravity="end|center_vertical"
                     android:layout_marginStart="4dp"
-                    android:textColor="@color/xui_config_color_pure_black"
-                    tools:text="xuexiangjys" />
+                    android:textColor="@color/xui_config_color_pure_black" />
             </LinearLayout>
 
             <TextView

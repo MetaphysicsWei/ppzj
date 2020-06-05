@@ -17,7 +17,13 @@
 
 package com.xuexiang.ppzj.activity;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.view.KeyEvent;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.xuexiang.ppzj.R;
 import com.xuexiang.ppzj.utils.MMKVUtils;
@@ -48,8 +54,24 @@ public class SplashActivity extends BaseSplashActivity implements CancelAdapt {
     protected void onCreateActivity() {
         initSplashView(R.drawable.xui_config_bg_splash);
         startSplash(false);
+        requestPermissions();
     }
 
+    // 要申请的权限
+    private String[] permissions = {Manifest.permission.RECORD_AUDIO};
+
+    private void requestPermissions() {
+        // 版本判断。当手机系统大于 23 时，才有必要去判断权限是否获取
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            // 检查该权限是否已经获取
+            int i = ContextCompat.checkSelfPermission(this, permissions[0]);
+            // 权限是否已经 授权 GRANTED---授权  DINIED---拒绝
+            if (i != PackageManager.PERMISSION_GRANTED) {
+                // 如果没有授予该权限，就去提示用户请求
+                ActivityCompat.requestPermissions(this, permissions, 321);
+            }
+        }
+    }
 
     /**
      * 启动页结束后的动作

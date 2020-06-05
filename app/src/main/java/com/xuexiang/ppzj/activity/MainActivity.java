@@ -164,6 +164,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                     case R.id.nav_settings:
                         openNewPage(SettingsFragment.class);
                         break;
+                    case R.id.nav_search:
+                        openNewPage(TrendingFragment.class);
+                        break;
                     case R.id.nav_about:
                         openNewPage(AboutFragment.class);
                         break;

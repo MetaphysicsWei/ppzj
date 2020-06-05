@@ -49,7 +49,7 @@
             android:id="@+id/nav_trending"
             android:checkable="false"
             android:icon="@drawable/ic_menu_trending"
-            android:title="@string/menu_trending" />
+            android:title="@string/menu_traffic" />
 
         <item
             android:id="@+id/nav_notifications"

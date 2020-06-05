@@ -5,6 +5,7 @@
 
     <!--进程杀死-->
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:name=".MyApp"
