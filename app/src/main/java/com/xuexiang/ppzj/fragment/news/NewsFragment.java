@@ -44,6 +44,7 @@ import com.xuexiang.xui.widget.imageview.ImageLoader;
 import com.xuexiang.xui.widget.imageview.RadiusImageView;
 
 import butterknife.BindView;
+import redis.clients.jedis.Jedis;
 
 /**
  * 首页动态
@@ -87,7 +88,6 @@ public class NewsFragment extends BaseFragment {
         RecyclerView.RecycledViewPool viewPool = new RecyclerView.RecycledViewPool();
         recyclerView.setRecycledViewPool(viewPool);
         viewPool.setMaxRecycledViews(0, 10);
-
         //轮播条
         SingleDelegateAdapter bannerAdapter = new SingleDelegateAdapter(R.layout.include_head_view_banner) {
             @Override
@@ -106,21 +106,22 @@ public class NewsFragment extends BaseFragment {
         SimpleDelegateAdapter<AdapterItem> commonAdapter = new SimpleDelegateAdapter<AdapterItem>(R.layout.adapter_common_grid_item, gridLayoutHelper, DemoDataProvider.getGridItems(getContext())) {
             @Override
             protected void bindData(@NonNull RecyclerViewHolder holder, int position, AdapterItem item) {
+                Jedis jedis = new Jedis("129.226.188.246",6379);//ip和端口号
+                jedis.auth("ppzj123456");
                 if (item != null) {
                     RadiusImageView imageView = holder.findViewById(R.id.riv_item);
                     imageView.setCircle(true);
                     ImageLoader.get().loadImage(imageView, item.getIcon());
                     // holder.text(R.id.tv_title, item.getTitle().toString().substring(0, 1));  取消显示标题第一个字的功能
                     holder.text(R.id.tv_sub_title, item.getTitle());
-
                     holder.click(R.id.ll_container, v ->
                             new MaterialDialog.Builder(getContext())
                                     //标题
                                     .title(item.getTitle())
                                     //文本内容
-                                    .content("再见再见再见再见再见再见再见再见再见再见再见再见")
+                                    .content(jedis.get(String.valueOf(item.getTitle())))
                                     //确认按键
-                                    .positiveText("你好")
+                                    .positiveText("了解")
                                     .show());
 
                 }
