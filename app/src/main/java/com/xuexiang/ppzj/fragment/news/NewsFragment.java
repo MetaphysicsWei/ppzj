@@ -44,7 +44,7 @@ import com.xuexiang.xui.widget.imageview.ImageLoader;
 import com.xuexiang.xui.widget.imageview.RadiusImageView;
 
 import butterknife.BindView;
-import redis.clients.jedis.Jedis;
+//import redis.clients.jedis.Jedis;
 
 /**
  * 首页动态
@@ -106,8 +106,8 @@ public class NewsFragment extends BaseFragment {
         SimpleDelegateAdapter<AdapterItem> commonAdapter = new SimpleDelegateAdapter<AdapterItem>(R.layout.adapter_common_grid_item, gridLayoutHelper, DemoDataProvider.getGridItems(getContext())) {
             @Override
             protected void bindData(@NonNull RecyclerViewHolder holder, int position, AdapterItem item) {
-                Jedis jedis = new Jedis("129.226.188.246",6379);//ip和端口号
-                jedis.auth("ppzj123456");
+//                Jedis jedis = new Jedis("129.226.188.246",6379);//ip和端口号
+//                jedis.auth("ppzj123456");
                 if (item != null) {
                     RadiusImageView imageView = holder.findViewById(R.id.riv_item);
                     imageView.setCircle(true);
@@ -119,7 +119,7 @@ public class NewsFragment extends BaseFragment {
                                     //标题
                                     .title(item.getTitle())
                                     //文本内容
-                                    .content(jedis.get(String.valueOf(item.getTitle())))
+                                    .content("再见再见再见再见再见再见再见再见再见再见再见再见")
                                     //确认按键
                                     .positiveText("了解")
                                     .show());
