@@ -19,10 +19,12 @@ package com.xuexiang.ppzj.activity;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -33,6 +35,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.gson.Gson;
 import com.xuexiang.ppzj.R;
 import com.xuexiang.ppzj.core.BaseActivity;
 import com.xuexiang.ppzj.core.BaseFragment;
@@ -54,6 +57,16 @@ import com.xuexiang.xutil.common.CollectionUtils;
 import com.xuexiang.xutil.display.Colors;
 
 import butterknife.BindView;
+import interfaces.heweather.com.interfacesmodule.bean.Code;
+import interfaces.heweather.com.interfacesmodule.bean.Lang;
+import interfaces.heweather.com.interfacesmodule.bean.Unit;
+import interfaces.heweather.com.interfacesmodule.bean.basic.Basic;
+import interfaces.heweather.com.interfacesmodule.bean.weather.now.Now;
+import interfaces.heweather.com.interfacesmodule.bean.weather.now.NowBase;
+import interfaces.heweather.com.interfacesmodule.view.HeConfig;
+import interfaces.heweather.com.interfacesmodule.view.HeWeather;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * 程序主页面
@@ -80,6 +93,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     @BindView(R.id.drawer_layout)
     DrawerLayout drawerLayout;
 
+
     private String[] mTitles;
 
     @Override
@@ -94,6 +108,52 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         initViews();
 
         initListeners();
+
+        Weather(); //初始化天气数据
+
+
+    }
+
+    private void Weather(){
+      //  setContentView(R.layout.include_navigation_header);
+
+        TextView weather_city = findViewById(R.id.weather_city);
+        TextView weather_tmp = findViewById(R.id.weather_tmp);
+
+
+        HeConfig.init("HE2006061649011733", "b4a4b372228543ee86870b6620d23c47");
+        HeConfig.switchToFreeServerNode();
+
+        HeWeather.getWeatherNow(MainActivity.this, "温州", Lang.CHINESE_SIMPLIFIED , Unit.METRIC , new HeWeather.OnResultWeatherNowBeanListener() {
+            @Override
+            public void onError(Throwable e) {
+                Log.i(TAG, "Weather Now onError: ", e);
+            }
+
+            @Override
+            public void onSuccess(Now dataObject) {
+                Log.i(TAG, " Weather Now onSuccess: " + new Gson().toJson(dataObject));
+                //先判断返回的status是否正确，当status正确时获取数据，若status不正确，可查看status对应的Code值找到原因
+                if ( Code.OK.getCode().equalsIgnoreCase(dataObject.getStatus()) ){
+                    //此时返回数据
+                    NowBase now = dataObject.getNow();
+
+                    Basic base = dataObject.getBasic();
+                    Log.i(TAG,"当前地区："+base.getCnty()+"——"+base.getAdmin_area()+"——"+base.getParent_city()+"——"+base.getLocation());
+                    Log.i(TAG, " 当前温度为：: " + now.getTmp());
+
+//                    weather_city.setText("地区：" + base.getLocation());
+//                    weather_tmp.setText("温度:" +"   " +  now.getTmp() + "℃");
+
+
+                } else {
+                    //在此查看返回数据失败的原因
+                    String status = dataObject.getStatus();
+                    Code code = Code.toEnum(status);
+                    Log.i(TAG, "failed code: " + code);
+                }
+            }
+        });
     }
 
     @Override
@@ -145,7 +205,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         // TODO: 2019-10-09 初始化数据
         ivAvatar.setImageResource(R.drawable.ic_default_head);
         tvAvatar.setText(R.string.app_name);
-        tvSign.setText("这个家伙很懒，什么也没有留下～～");
+        tvSign.setText("软件18-1");
         navHeader.setOnClickListener(this);
     }
 
@@ -182,6 +242,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         viewPager.addOnPageChangeListener(this);
         bottomNavigation.setOnNavigationItemSelectedListener(this);
     }
+
+
 
     /**
      * 处理侧边栏点击事件

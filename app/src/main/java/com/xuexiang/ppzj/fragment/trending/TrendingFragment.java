@@ -77,6 +77,7 @@ import java.util.TimerTask;
 @Page(anim = CoreAnim.none)
 public class TrendingFragment extends BaseFragment {
     private static final String TAG = "TrendingFragment";
+
     /**
      * @return 返回为 null意为不需要导航栏
      */
