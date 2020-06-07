@@ -115,10 +115,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     }
 
     private void Weather(){
-      //  setContentView(R.layout.include_navigation_header);
-
-        TextView weather_city = findViewById(R.id.weather_city);
-        TextView weather_tmp = findViewById(R.id.weather_tmp);
+        View headerView = navView.getHeaderView(0);
+        TextView weather_city = headerView.findViewById(R.id.weather_city);
+        TextView weather_tmp = headerView.findViewById(R.id.weather_tmp);
 
 
         HeConfig.init("HE2006061649011733", "b4a4b372228543ee86870b6620d23c47");
@@ -142,8 +141,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                     Log.i(TAG,"当前地区："+base.getCnty()+"——"+base.getAdmin_area()+"——"+base.getParent_city()+"——"+base.getLocation());
                     Log.i(TAG, " 当前温度为：: " + now.getTmp());
 
-//                    weather_city.setText("地区：" + base.getLocation());
-//                    weather_tmp.setText("温度:" +"   " +  now.getTmp() + "℃");
+                    weather_city.setText("地区：" + base.getLocation());
+                    weather_tmp.setText("温度:" +"   " +  now.getTmp() + "℃");
 
 
                 } else {
@@ -188,6 +187,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         TextView tvAvatar = headerView.findViewById(R.id.tv_avatar);
         TextView tvSign = headerView.findViewById(R.id.tv_sign);
 
+        TextView weather_city = headerView.findViewById(R.id.weather_city);        //123123123123
+
         if (Utils.isColorDark(ThemeUtils.resolveColor(this, R.attr.colorAccent))) {
             tvAvatar.setTextColor(Colors.WHITE);
             tvSign.setTextColor(Colors.WHITE);
@@ -206,6 +207,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         ivAvatar.setImageResource(R.drawable.ic_default_head);
         tvAvatar.setText(R.string.app_name);
         tvSign.setText("软件18-1");
+     //   weather_city.setText("123");
         navHeader.setOnClickListener(this);
     }
 
