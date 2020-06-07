@@ -17,8 +17,6 @@
 
 package com.xuexiang.ppzj.fragment.news;
 
-import android.os.Message;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -45,11 +43,9 @@ import com.xuexiang.xui.widget.dialog.materialdialog.MaterialDialog;
 import com.xuexiang.xui.widget.imageview.ImageLoader;
 import com.xuexiang.xui.widget.imageview.RadiusImageView;
 
-import java.util.Map;
-import android.os.Handler;
-
 import butterknife.BindView;
-import redis.clients.jedis.Jedis;
+//import redis.clients.jedis.Jedis;
+
 /**
  * 首页动态
  *
@@ -101,41 +97,17 @@ public class NewsFragment extends BaseFragment {
                         .setOnItemClickListener((view, item, position1) -> XToastUtils.toast("headBanner position--->" + position1)).startScroll();
             }
         };
+
         //九宫格菜单
         GridLayoutHelper gridLayoutHelper = new GridLayoutHelper(4);
         gridLayoutHelper.setPadding(0, 16, 0, 0);
         gridLayoutHelper.setVGap(10);
         gridLayoutHelper.setHGap(0);
         SimpleDelegateAdapter<AdapterItem> commonAdapter = new SimpleDelegateAdapter<AdapterItem>(R.layout.adapter_common_grid_item, gridLayoutHelper, DemoDataProvider.getGridItems(getContext())) {
-            private Map myset;
-
             @Override
             protected void bindData(@NonNull RecyclerViewHolder holder, int position, AdapterItem item) {
-                //主线程中创建一个Handler对象，用于获取子线程数据
-                Handler handler=new Handler() {
-                    @Override
-                    public void handleMessage(android.os.Message msg){
-                        //接收子线程发送的数据
-                         myset = (Map) msg.obj;
-                    };
-                };
-                // 创建一个子线程来连接数据库并获取数据库中对应表的数据
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Jedis jedis = new Jedis("129.226.188.246",6379);//ip和端口号
-                        jedis.auth("ppzj123456");
-                        Map<String, String> myset = jedis.hgetAll("ppzj");
-
-                        //在子线程中创建一个Message对象，为携带子线程数据给主线程
-                        Message message = new Message();
-                        message.obj = myset;
-                        //使用handler对象将message发送到主线程
-                        handler.sendMessage(message);
-                        jedis.close();
-                    }
-                }).start();
-
+//                Jedis jedis = new Jedis("129.226.188.246",6379);//ip和端口号
+//                jedis.auth("ppzj123456");
                 if (item != null) {
                     RadiusImageView imageView = holder.findViewById(R.id.riv_item);
                     imageView.setCircle(true);
@@ -147,12 +119,12 @@ public class NewsFragment extends BaseFragment {
                                     //标题
                                     .title(item.getTitle())
                                     //文本内容
-                                    .content((CharSequence) myset.get(item.getTitle()))
+                                    .content("再见再见再见再见再见再见再见再见再见再见再见再见")
                                     //确认按键
                                     .positiveText("了解")
                                     .show());
-                }
 
+                }
             }
         };
 
