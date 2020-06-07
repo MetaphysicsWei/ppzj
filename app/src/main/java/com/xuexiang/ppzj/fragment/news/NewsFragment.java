@@ -46,15 +46,10 @@ import com.xuexiang.xui.widget.imageview.ImageLoader;
 import com.xuexiang.xui.widget.imageview.RadiusImageView;
 
 import java.util.Map;
-import java.util.Set;
 import android.os.Handler;
-import java.util.logging.LogRecord;
 
 import butterknife.BindView;
 import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
-//import redis.clients.jedis.Jedis;
-
 /**
  * 首页动态
  *
@@ -131,14 +126,12 @@ public class NewsFragment extends BaseFragment {
                         Jedis jedis = new Jedis("129.226.188.246",6379);//ip和端口号
                         jedis.auth("ppzj123456");
                         Map<String, String> myset = jedis.hgetAll("ppzj");
-//                        System.out.println(myset);
 
                         //在子线程中创建一个Message对象，为携带子线程数据给主线程
                         Message message = new Message();
                         message.obj = myset;
                         //使用handler对象将message发送到主线程
                         handler.sendMessage(message);
-
                         jedis.close();
                     }
                 }).start();
