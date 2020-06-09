@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/wenzhou"
+        android:icon="@mipmap/ic_launcher"
+        android:title="温州"/>
+
+    <item
+        android:id="@+id/hangzhou"
+        android:icon="@mipmap/ic_launcher"
+        android:title="杭州"/>
+
+    <item
+        android:id="@+id/ningbo"
+        android:icon="@mipmap/ic_launcher"
+        android:title="宁波"/>
+
+    <item
+        android:id="@+id/shaoxing"
+        android:icon="@mipmap/ic_launcher"
+        android:title="绍兴"/>
+    <item
+        android:id="@+id/jiaxing"
+        android:icon="@mipmap/ic_launcher"
+        android:title="嘉兴"/>
+    <item
+        android:id="@+id/taizhou"
+        android:icon="@mipmap/ic_launcher"
+        android:title="台州"/>
+    <item
+        android:id="@+id/lishui"
+        android:icon="@mipmap/ic_launcher"
+        android:title="丽水"/>
+    <item
+        android:id="@+id/zhoushan"
+        android:icon="@mipmap/ic_launcher"
+        android:title="舟山"/>
+
+</menu>

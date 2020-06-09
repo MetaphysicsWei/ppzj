@@ -83,26 +83,50 @@
             android:id="@+id/weather_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/weather"/>
+            android:src="@drawable/weather" />
 
         <TextView
             android:id="@+id/weather_city"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
             android:layout_toRightOf="@+id/weather_img"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="15dp"
-            android:text="城市："/>
+            android:text="城市：" />
 
         <TextView
             android:id="@+id/weather_tmp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/weather_city"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="12dp"
             android:layout_toRightOf="@+id/weather_img"
-            android:text="温度:" />
+            android:text="温度：" />
+
+        <TextView
+            android:id="@+id/weather_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/weather_city"
+            android:layout_toRightOf="@+id/weather_img"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="6dp"
+            android:text="天气：" />
+
+        <Button
+            android:id="@+id/weather_choose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/weather_city"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@+id/weather_tmp"
+            android:text="地区"
+            android:onClick="popupMenu"
+            android:textSize="15dp"
+            android:drawableRight="@drawable/arrow"
+
+            />
 
 
     </RelativeLayout>

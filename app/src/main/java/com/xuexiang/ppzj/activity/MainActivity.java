@@ -17,14 +17,17 @@
 
 package com.xuexiang.ppzj.activity;
 
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -109,21 +112,89 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
         initListeners();
 
-        Weather(); //初始化天气数据
-
+        Weather("温州"); //初始化天气数据
 
     }
 
-    private void Weather(){
+    //天气列表选择
+    public void popupMenu(View view) {
+        // 这里的view代表popupMenu需要依附的view
+        PopupMenu popupMenu = new PopupMenu(MainActivity.this, view);
+        // 获取布局文件
+        popupMenu.getMenuInflater().inflate(R.menu.sample_menu, popupMenu.getMenu());
+        popupMenu.show();
+        // 通过上面这几行代码，就可以把控件显示出来了
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            Button weather_choose = findViewById(R.id.weather_choose);
+
+//            ImageView weather = findViewById(R.id.weather_img);
+//            TextView weather_type=findViewById(R.id.weather_id);
+
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                //控件每一个item的点击事件
+                switch (item.getItemId()) {
+                    case R.id.hangzhou:
+                        Weather("杭州");
+                        weather_choose.setText("杭州");
+                        break;
+                    case R.id.wenzhou:
+                        Weather("温州");
+                        weather_choose.setText("温州");
+                        break;
+                    case R.id.ningbo:
+                        Weather("宁波");
+                        weather_choose.setText("宁波");
+                        break;
+                    case R.id.shaoxing:
+                        Weather("绍兴");
+                        weather_choose.setText("绍兴");
+                        break;
+                    case R.id.jiaxing:
+                        Weather("嘉兴");
+                        weather_choose.setText("嘉兴");
+                        break;
+                    case R.id.zhoushan:
+                        Weather("舟山");
+                        weather_choose.setText("舟山");
+                        break;
+                    case R.id.lishui:
+                        Weather("丽水");
+                        weather_choose.setText("丽水");
+                        break;
+                    case R.id.taizhou:
+                        Weather("台州");
+                        weather_choose.setText("台州");
+                        break;
+
+                }
+
+           return true;
+            }
+
+        });
+        popupMenu.setOnDismissListener(new PopupMenu.OnDismissListener() {
+            @Override
+            public void onDismiss(PopupMenu menu) {
+                // 控件消失时的事件
+            }
+        });
+
+    }
+
+
+
+    public void Weather(String city){
         View headerView = navView.getHeaderView(0);
         TextView weather_city = headerView.findViewById(R.id.weather_city);
         TextView weather_tmp = headerView.findViewById(R.id.weather_tmp);
+        TextView weather_id = headerView.findViewById(R.id.weather_id);
 
 
         HeConfig.init("HE2006061649011733", "b4a4b372228543ee86870b6620d23c47");
         HeConfig.switchToFreeServerNode();
 
-        HeWeather.getWeatherNow(MainActivity.this, "温州", Lang.CHINESE_SIMPLIFIED , Unit.METRIC , new HeWeather.OnResultWeatherNowBeanListener() {
+        HeWeather.getWeatherNow(MainActivity.this, city, Lang.CHINESE_SIMPLIFIED , Unit.METRIC , new HeWeather.OnResultWeatherNowBeanListener() {
             @Override
             public void onError(Throwable e) {
                 Log.i(TAG, "Weather Now onError: ", e);
@@ -139,10 +210,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
                     Basic base = dataObject.getBasic();
                     Log.i(TAG,"当前地区："+base.getCnty()+"——"+base.getAdmin_area()+"——"+base.getParent_city()+"——"+base.getLocation());
-                    Log.i(TAG, " 当前温度为：: " + now.getTmp());
+                    Log.i(TAG, " 当前温度为： " + now.getTmp());
+                    Log.i(TAG, " 当前天气为： " + now.getCond_txt());
 
                     weather_city.setText("地区：" + base.getLocation());
-                    weather_tmp.setText("温度:" +"   " +  now.getTmp() + "℃");
+                    weather_tmp.setText("温度：" +"   " +  now.getTmp() + "℃");
+                    weather_id.setText("天气：" + now.getCond_txt());
 
 
                 } else {
@@ -150,9 +223,47 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                     String status = dataObject.getStatus();
                     Code code = Code.toEnum(status);
                     Log.i(TAG, "failed code: " + code);
+
                 }
+                ImageView weather = findViewById(R.id.weather_img);
+                TextView weather_type=findViewById(R.id.weather_id);
+                String s = weather_type.getText().toString();
+                String weather_typer[] = s.split("：");
+           //     Log.i("天气是————————————————",weather_typer[1]);
+                switch (weather_typer[1]){
+                    case "晴" :
+                        weather.setImageResource(R.drawable.weather_sun);
+                        break;
+                    case "多云" :
+                        weather.setImageResource(R.drawable.weather_cloudy);
+                        break;
+                    case "阵雨":
+                        weather.setImageResource(R.drawable.weather_shower);
+                        break;
+                    case "小雨":
+                        weather.setImageResource(R.drawable.weather_shower);
+                        break;
+                    case "雷阵雨":
+                        weather.setImageResource(R.drawable.weather_shower);
+                        break;
+                    case "阴" :
+                        weather.setImageResource(R.drawable.weather_overcast);
+                        break;
+                    case "台风" :
+                        weather.setImageResource(R.drawable.weather_typhoon);
+                        break;
+                    case "雾霾" :
+                        weather.setImageResource(R.drawable.weather_smog);
+                        break;
+                    default:
+                        weather.setImageResource(R.drawable.weather_shower);
+                }
+
+
             }
         });
+
+
     }
 
     @Override
@@ -186,8 +297,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         RadiusImageView ivAvatar = headerView.findViewById(R.id.iv_avatar);
         TextView tvAvatar = headerView.findViewById(R.id.tv_avatar);
         TextView tvSign = headerView.findViewById(R.id.tv_sign);
-
-        TextView weather_city = headerView.findViewById(R.id.weather_city);        //123123123123
 
         if (Utils.isColorDark(ThemeUtils.resolveColor(this, R.attr.colorAccent))) {
             tvAvatar.setTextColor(Colors.WHITE);
