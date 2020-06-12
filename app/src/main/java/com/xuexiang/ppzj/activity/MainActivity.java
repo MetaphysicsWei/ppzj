@@ -54,12 +54,7 @@ import interfaces.heweather.com.interfacesmodule.view.HeWeather;
 
 import static android.content.ContentValues.TAG;
 
-/**
- * 程序主页面
- *
- * @author xuexiang
- * @since 2019-07-07 23:53
- */
+
 public class MainActivity extends BaseActivity implements View.OnClickListener, ViewPager.OnPageChangeListener, BottomNavigationView.OnNavigationItemSelectedListener, ClickUtils.OnClick2ExitListener, Toolbar.OnMenuItemClickListener {
 
     @BindView(R.id.toolbar)
