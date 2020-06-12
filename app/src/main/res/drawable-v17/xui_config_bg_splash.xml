@@ -15,7 +15,7 @@
   ~
   -->
 
-<!--有公司logo-->
+<!--PPZJ项目组的logo-->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android"
     android:opacity="opaque">
     <item android:drawable="@color/xui_config_color_white" />
