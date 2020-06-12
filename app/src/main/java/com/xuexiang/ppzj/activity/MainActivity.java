@@ -214,7 +214,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                     Log.i(TAG, " 当前天气为： " + now.getCond_txt());
 
                     weather_city.setText("地区：" + base.getLocation());
-                    weather_tmp.setText("温度：" +"   " +  now.getTmp() + "℃");
+                    weather_tmp.setText("温度：" +  now.getTmp() + "℃");
                     weather_id.setText("天气：" + now.getCond_txt());
 
 
