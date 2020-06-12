@@ -1,20 +1,3 @@
-/*
- * Copyright (C) 2020 xuexiangjys(xuexiangjys@163.com)
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *       http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
-
 package com.xuexiang.ppzj.utils;
 
 import android.content.Context;
@@ -81,7 +64,7 @@ public class DemoDataProvider {
     public static List<NewInfo> getDemoNewInfos(String key) {
         List<NewInfo> list = new ArrayList<>();
         List<NewInfo> searchResult = new ArrayList<>();
-        list.add(new NewInfo("资讯", "良渚凭什么申遗成功？一眼5000年的古城，是一生必去的打卡地！")
+        list.add(new NewInfo("资讯", "良渚凭什么申遗成功？一眼5000年的古城，是一生必去的打卡地。")
                 .setSummary("浙江杭州良渚古城遗址，被正式列入《世界遗产名录》，中国以55处世界遗产的数量，位列世界遗产总数第一！")
                 .setDetailUrl("http://www.tourzj.gov.cn/play/ddetails_zixun.aspx?id=1864")
                 .setImageUrl("http://img.tourzj.com/admin/media/eecfd82f-74b4-4311-a023-e805d63f4172.jpg"));
@@ -115,8 +98,8 @@ public class DemoDataProvider {
                 .setDetailUrl("http://www.tourzj.gov.cn/play/ddetails_zixun.aspx?id=1877")
                 .setImageUrl("http://img.tourzj.com/admin/media/a56dfb64-a7a6-4c1f-84a3-406ace18e28c.jpg"));
 
-        list.add(new NewInfo("资讯", "浙6个深山隐居地，才是夏天最值得一去的旅行地！")
-                .setSummary("一年中最清新的夏季时节又将到来 挑个日子，拣个山头，树下闲坐，看风吹起")
+        list.add(new NewInfo("资讯", "浙6个深山隐居地，才是夏天最值得一去的旅行地。")
+                .setSummary("一年中最清新的夏季时节又将到来 挑个日子，拣个山头，树下闲坐，看风吹起。")
                 .setDetailUrl("http://www.tourzj.gov.cn/play/ddetails_zixun.aspx?id=1883")
                 .setImageUrl("http://img.tourzj.com/admin/media/2c8ea702-d55b-4c46-8182-0493e63f77f5.jpg"));
 
