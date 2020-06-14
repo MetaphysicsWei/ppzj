@@ -9,11 +9,6 @@ import com.xuexiang.xrouter.annotation.Router;
 import com.xuexiang.xrouter.launcher.XRouter;
 import com.xuexiang.xutil.common.StringUtils;
 
-/**
- * https://xuexiangjys.club/xpage/transfer?pageName=xxxxx&....
- * applink的中转
- *
- */
 @Router(path = "/xpage/transfer")
 public class XPageTransferActivity extends BaseActivity {
 

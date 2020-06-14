@@ -115,34 +115,42 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                     case R.id.hangzhou:
                         Weather("杭州");
                         weather_choose.setText("杭州");
+                        XToastUtils.toast("切换成功！");
                         break;
                     case R.id.wenzhou:
                         Weather("温州");
                         weather_choose.setText("温州");
+                        XToastUtils.toast("切换成功！");
                         break;
                     case R.id.ningbo:
                         Weather("宁波");
                         weather_choose.setText("宁波");
+                        XToastUtils.toast("切换成功！");
                         break;
                     case R.id.shaoxing:
                         Weather("绍兴");
                         weather_choose.setText("绍兴");
+                        XToastUtils.toast("切换成功！");
                         break;
                     case R.id.jiaxing:
                         Weather("嘉兴");
                         weather_choose.setText("嘉兴");
+                        XToastUtils.toast("切换成功！");
                         break;
                     case R.id.zhoushan:
                         Weather("舟山");
                         weather_choose.setText("舟山");
+                        XToastUtils.toast("切换成功！");
                         break;
                     case R.id.lishui:
                         Weather("丽水");
                         weather_choose.setText("丽水");
+                        XToastUtils.toast("切换成功！");
                         break;
                     case R.id.taizhou:
                         Weather("台州");
                         weather_choose.setText("台州");
+                        XToastUtils.toast("切换成功！");
                         break;
 
                 }
